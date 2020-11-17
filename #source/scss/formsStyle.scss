@@ -1,0 +1,178 @@
+// Файл обнуляющих стилей
+@import "nullstyle";
+// Файл с ссылками на шрифты
+@import "fonts";
+// переменные, шаблоны, миксины
+@import "templates";
+
+// font-family: "Open Sans";
+//в body
+// font-family: "Montserrat";
+// в обнулении font-size: 14px; 
+
+body {
+  font-family: "Montserrat";
+  color: $black100;
+}
+
+//шаблон для текстовых полей
+.input-box {
+  min-width: 320px;
+  height: 44px;
+  border: 1px solid $black25;
+  border-radius: 4px;
+  font-family: inherit;
+}
+
+//Названия полей
+h3 {
+  @extend .label;
+  margin: 20px 0 5px;
+}
+
+// ------------------------------------------ //
+
+.container {
+  width: 100%;
+  max-width: 1160px;
+  margin: 140px auto 0;
+}
+
+//form
+// .form {
+//   &__first-row {
+//   }
+
+//   &__col {
+//   }
+// }
+
+// email
+.email {
+  &__input {
+    @extend .input-box;
+    padding: 13px 15px;
+  }
+  &__input::placeholder {
+    color: $black25;
+  }
+  &__input:focus {
+    border: 1px solid $black50;
+	 color: $black75;
+  }
+}
+
+// guests drop down
+.dropdown {
+	@extend .text;
+	position: relative;
+	display: inline-block;
+	&__btn {
+		border-radius: 4px 4px 0 0;
+		@extend .input-box;
+		text-align: left;
+		padding-left: 15px;
+		color: $black100;
+		background-color: #ffffff;
+		/*стрелка  */
+		&:after{
+			content: '';
+			width: 8px;
+			height: 8px;
+			border-bottom: 2px solid $black75;
+			border-left: 2px solid $black75;
+			position: absolute;
+			right: 18px; 
+			bottom: 20px; 
+			transform: rotate(-45deg);
+		}
+		&:hover, &:focus {
+			outline: none;
+  			border: solid 1px $black50;
+  			border-radius: 4px 4px 0 0;
+		}
+	}
+	&__content {
+		display: none;
+		min-width: 320px;
+		height: 159px;
+		box-shadow: 0 10px 20px 0 $black5;
+		border: solid 1px $black50;
+		border-radius: 0 0 4px 4px;
+		position: absolute;
+		z-index: 1;
+		/* Links inside the dropdown */
+		a {
+			@extend .label;
+			color: $black100;
+			padding: 13px 15px;
+			display: block;
+		}
+	}
+
+	&__item {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	&__counter {
+		width: 100px;
+  		display: flex;
+  		justify-content: space-between;
+  		align-items: center;
+  		margin-right: 7px;
+	}
+
+	&__counter-minus, &__counter-plus {
+		color: $black50;
+		width: 30px;
+		height: 30px;
+		border-radius: 50%;
+		background-color: #fff;
+		border: 1px solid $black50;
+		&:hover{
+			background-color: #ddd;
+		}
+	}
+	&__counter-minus{
+		opacity: 0.38;
+	}
+
+	&__clicks-count {
+		@extend .label;
+	}
+
+	&__bottom-btns {
+		padding: 15px 7px 0px 9px;
+  		position: relative;
+	}
+
+	&__btn-clean, &__btn-submit {
+		@extend .label;
+		background-color: #fff;
+		border: none;
+		&:hover{
+			opacity: 0.7;
+  			cursor: pointer;
+		}
+	}
+
+	&__btn-submit {
+		color: $purple;
+		position: absolute;
+ 		content: '';
+  		right: 4px;
+  		top: center;
+	}
+	&__btn-clean{
+		display: none;
+		color: $black50;
+		position: absolute;
+		content: '';
+		left: 8px;
+	}
+}
+
+// Show the dropdown menu 
+.show {display:block;}
+

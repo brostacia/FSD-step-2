@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <title>Гостиница</title>
+    <link rel="stylesheet" href="css/formsStyle.css" />
+
+    <meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
+  </head>
+
+  <body>
+    <div class="form">
+      <div class="container">
+        <div class="form__first-row">
+          <div class="form__col">
+            <div>
+              <form class="email" action="/" method="get">
+                <h3>Text field</h3>
+                <input
+                  class="email__input"
+                  type="text"
+                  name="user-email"
+                  placeholder="Email"
+                />
+              </form>
+            </div>
+
+            <!-- guests drop down -->
+            <h3>Drop down</h3>
+            <div class="dropdown">
+              <button onclick="myFunction()" id="dropbtn" class="dropdown__btn">
+                Сколько гостей
+              </button>
+              <div id="myDropdown" class="dropdown__content">
+                <!--   Взрослые -->
+                <div class="dropdown__item">
+                  <a href="#">Взрослые </a>
+                  <div class="dropdown__counter">
+                    <button
+                      type="button"
+                      class="dropdown__counter-minus"
+                      onClick="makeSubstractionAdult()"
+                    >
+                      -
+                    </button>
+                    <a id="clicks-adult" class="dropdown__clicks-count">0</a>
+                    <button
+                      type="button"
+                      class="dropdown__counter-plus"
+                      onClick="makeAdditionAdult()"
+                    >
+                      +
+                    </button>
+                  </div>
+                </div>
+                <!--   Дети   -->
+                <div class="dropdown__item">
+                  <a href="#">Дети </a>
+                  <div class="dropdown__counter">
+                    <button
+                      type="button"
+                      class="dropdown__counter-minus"
+                      onClick="makeSubstractionChildren()"
+                    >
+                      -
+                    </button>
+                    <a id="clicks-children" class="dropdown__clicks-count">0</a>
+                    <button
+                      type="button"
+                      class="dropdown__counter-plus"
+                      onClick="makeAdditionChildren()"
+                    >
+                      +
+                    </button>
+                  </div>
+                </div>
+                <!--   Младенцы   -->
+                <div class="dropdown__item">
+                  <a href="#">Младенцы </a>
+                  <div class="dropdown__counter">
+                    <button
+                      type="button"
+                      class="dropdown__counter-minus"
+                      onClick="makeSubstractionBabies()"
+                    >
+                      -
+                    </button>
+                    <a id="clicks-babies" class="dropdown__clicks-count">0</a>
+                    <button
+                      type="button"
+                      class="dropdown__counter-plus"
+                      onClick="makeAdditionBabies()"
+                    >
+                      +
+                    </button>
+                  </div>
+                </div>
+                <div class="dropdown__bottom-btns">
+                  <input
+                    type="button"
+                    id="clean"
+                    class="dropdown__btn-clean"
+                    onclick="clean()"
+                    value="очистить"
+                  />
+                  <input
+                    type="button"
+                    id="submit"
+                    class="dropdown__btn-submit"
+                    onclick="showResult()"
+                    value="применить"
+                  />
+                </div>
+              </div>
+              <!-- ./dropdown-content   -->
+            </div>
+
+            <!-- <div>
+              <h3>Date Dropdown</h3>
+              <input type="date" name="user-date" id="user-date" />
+            </div>
+
+            <div>
+              <h3>Filter Date Dropdown</h3>
+              19авг-23авг
+              <div class="input-box"></div>
+            </div>
+				 -->
+          </div>
+        </div>
+      </div>
+      <!-- /.container -->
+    </div>
+    <!-- /.form -->
+    <script src="js/script.js"></script>
+  </body>
+</html>
